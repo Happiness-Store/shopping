@@ -1,0 +1,34 @@
+<header class="store-header">
+
+  <div class="container header-content">
+
+    <!-- Logo -->
+    <a class="store-logo" routerLink="/">
+      <span class="logo-icon">🌸</span>
+      <span>Happiness Store</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="nav-links">
+
+      <a routerLink="/rakhi"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        Rakhi
+      </a>
+
+      <a routerLink="/return-gifts"
+         routerLinkActive="active">
+        Return Gifts
+      </a>
+
+      <a routerLink="/decoration"
+         routerLinkActive="active">
+        Decoration
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
