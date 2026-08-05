@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Beautiful Designer Rakhi",
+    "price": 199,
+    "image": "images/rakhi/rakhi1.PNG",
+    "description": "Beautiful designer Rakhi for your brother."
+  },
+  {
+    "id": 2,
+    "name": "Traditional Rakhi",
+    "price": 149,
+    "image": "images/rakhi/rakhi2.PNG",
+    "description": "Traditional Rakhi with beautiful design."
+  },
+  {
+    "id": 3,
+    "name": "Kids Rakhi",
+    "price": 99,
+    "image": "images/rakhi/rakhi3.PNG",
+    "description": "Cute Rakhi specially designed for kids."
+  }
+]
