@@ -1,1 +1,0 @@
-import{Ha as n,Ia as a,Pa as i,ua as o}from"./chunk-C42BOEEA.js";var r=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-decoration"]],decls:2,vars:0,template:function(e,s){e&1&&(n(0,"h2"),i(1,"Decoration items available here"),a())},encapsulation:2})};export{r as Decoration};

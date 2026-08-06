@@ -1,1 +1,0 @@
-import{Ha as i,Ia as r,Pa as s,ua as n}from"./chunk-C42BOEEA.js";var a=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-return-gifts"]],decls:2,vars:0,template:function(e,f){e&1&&(i(0,"h2"),s(1,"Return Gifts are available here"),r())},encapsulation:2})};export{a as ReturnGifts};

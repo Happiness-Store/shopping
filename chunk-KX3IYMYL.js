@@ -1,0 +1,1 @@
+import{Ja as n,Ka as a,Ua as i,wa as o}from"./chunk-V4727N2N.js";var r=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-decoration"]],decls:2,vars:0,template:function(e,s){e&1&&(n(0,"h2"),i(1,"Decoration items available here"),a())},encapsulation:2})};export{r as Decoration};
