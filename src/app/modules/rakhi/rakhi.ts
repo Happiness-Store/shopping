@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,ChangeDetectorRef } from '@angular/core';
 import { Product } from '../../services/product';
 import { ProductI } from '../../models/productI.model';
 @Component({
@@ -9,7 +9,7 @@ import { ProductI } from '../../models/productI.model';
 })
 export class Rakhi {
    products: ProductI[] = [];
-constructor(private productService: Product) {}
+constructor(private productService: Product , private cdr: ChangeDetectorRef) {}
 ngOnInit() {
    this.loadRakhiProducts();
 }
@@ -17,6 +17,7 @@ ngOnInit() {
     this.productService.getRakhiProducts().subscribe({
       next: (data) => {
         this.products = data;
+        this.cdr.detectChanges();
         console.log('Rakhi products:', this.products);
       },
       error: (error) => {
