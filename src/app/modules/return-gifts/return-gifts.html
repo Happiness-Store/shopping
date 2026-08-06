@@ -1,1 +1,41 @@
 <h2>Return Gifts are available here</h2>
+<div class="rakhi-container">
+
+  <h1>Return Gifts Collection</h1>
+
+  <div class="product-grid">
+
+    @for (product of products; track product.id) {
+
+      <div class="product-card">
+ {{product.name}}
+        <img
+          [src]="product.image"
+          [alt]="product.name"
+        />
+
+        <div class="product-details">
+
+          <h3>{{ product.name }}</h3>
+
+          <p class="description">
+            {{ product.description }}
+          </p>
+
+          <div class="price">
+            ₹{{ product.price }}
+          </div>
+
+          <button>
+            Buy Now
+          </button>
+
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+</div>

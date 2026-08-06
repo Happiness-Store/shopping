@@ -12,4 +12,8 @@ export class Product {
     return this.http.get<ProductI[]>('data/rakhi.json');
 
   }
+    getReturnGiftsProducts(): Observable<ProductI[]> {
+    return this.http.get<ProductI[]>('data/returnGifts.json');
+
+  }
 }

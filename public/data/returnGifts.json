@@ -3,84 +3,57 @@
     "id": 1,
     "name": "Beautiful Designer Rakhi",
     "price": 199,
-    "image": "images/rakhi/rakhi1.PNG",
+    "image": "images/returnGift/1.jpg",
     "description": "Beautiful designer Rakhi for your brother."
   },
   {
     "id": 2,
     "name": "Traditional Rakhi",
     "price": 149,
-    "image": "images/rakhi/2.PNG",
+    "image": "images/returnGift/2.jpg",
     "description": "Traditional Rakhi with beautiful design."
   },
   {
     "id": 3,
-    "name": "Kids Rakhi",
+    "name": "item name ",
     "price": 99,
-    "image": "images/rakhi/3.PNG",
+    "image": "images/returnGift/3.jpg",
     "description": "Cute Rakhi specially designed for kids."
   },
    {
     "id": 4,
     "name": "Beautiful Designer Rakhi",
     "price": 199,
-    "image": "images/rakhi/4.PNG",
+    "image": "images/returnGift/1.jpg",
     "description": "Beautiful designer Rakhi for your brother."
   },
   {
     "id": 5,
     "name": "Traditional Rakhi",
     "price": 149,
-    "image": "images/rakhi/5.PNG",
+    "image": "images/returnGift/2.jpg",
     "description": "Traditional Rakhi with beautiful design."
   },
   {
     "id": 6,
     "name": "Kids Rakhi",
     "price": 99,
-    "image": "images/rakhi/6.PNG",
+    "image": "images/returnGift/3.jpg",
     "description": "Cute Rakhi specially designed for kids."
   },
   {
     "id": 7,
     "name": "Kids Rakhi",
     "price": 99,
-    "image": "images/rakhi/7.PNG",
+    "image": "images/returnGift/1.jpg",
     "description": "Cute Rakhi specially designed for kids."
   },
   {
     "id": 8,
     "name": "Kids Rakhi",
     "price": 99,
-    "image": "images/rakhi/8.PNG",
-    "description": "Cute Rakhi specially designed for kids."
-  },
-   {
-    "id": 9,
-    "name": "Kids Rakhi",
-    "price": 99,
-    "image": "images/rakhi/9.PNG",
-    "description": "Cute Rakhi specially designed for kids."
-  },
-  {
-    "id": 10,
-    "name": "Kids Rakhi",
-    "price": 99,
-    "image": "images/rakhi/10.PNG",
-    "description": "Cute Rakhi specially designed for kids."
-  },
-   {
-    "id": 11,
-    "name": "Kids Rakhi",
-    "price": 99,
-    "image": "images/rakhi/11.PNG",
-    "description": "Cute Rakhi specially designed for kids."
-  },
-  {
-    "id": 12,
-    "name": "Kids Rakhi",
-    "price": 99,
-    "image": "images/rakhi/12.PNG",
+    "image": "images/returnGift/2.jpg",
     "description": "Cute Rakhi specially designed for kids."
   }
+
 ]

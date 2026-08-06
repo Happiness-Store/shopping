@@ -25,4 +25,26 @@ ngOnInit() {
       }
     });
   }
+  buyNow(product: ProductI): void {
+    const phoneNumber = '918483881691';
+
+          const imageUrl =
+            `https://raw.githubusercontent.com/happiness-store/shopping/main/public/${product.image}`;
+
+          const message = `
+        Hi, I want to order this Rakhi.
+
+        Product: ${product.name}
+        Price: ₹${product.price}
+        Quantity: 1
+        Product Image: ${imageUrl}
+        `;
+
+          const whatsappUrl =
+            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+          window.open(whatsappUrl, '_blank');
+    //let url ="https://wa.me/918483881691?text=Hi,I want to buy " + encodeURIComponent(product.name);
+  //window.open (url, "_blank");
+  }
 }
