@@ -19,7 +19,24 @@ export const routes: Routes = [
       import('./modules/decoration/decoration')
         .then(m => m.Decoration)
   },
-
+  {
+  path: 'admin/login',
+  loadComponent: () =>
+    import('./modules/admin/login/login')
+      .then(m => m.Login)
+  },
+{
+  path: 'admin',
+  loadComponent: () =>
+    import('./modules/admin/dashboard/dashboard')
+      .then(m => m.Dashboard)
+},
+{
+  path: 'admin/add-rakhi',
+  loadComponent: () =>
+    import('./modules/admin/add-rakhi/add-rakhi')
+      .then(m => m.AddRakhi)
+},
   {
     path: '',
     redirectTo: 'rakhi',

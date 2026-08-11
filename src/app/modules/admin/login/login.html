@@ -1,0 +1,70 @@
+<div class="login-container">
+
+  <div class="login-card">
+
+    <h2>Admin Login</h2>
+
+    <p class="subtitle">
+      Rakhi Store Admin
+    </p>
+
+    <form (ngSubmit)="login()">
+
+      <div class="form-group">
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="Enter admin email"
+          autocomplete="email"
+        />
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="password">
+          Password
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter password"
+          autocomplete="current-password"
+        />
+
+      </div>
+
+      @if (errorMessage) {
+        <div class="error-message">
+          {{ errorMessage }}
+        </div>
+      }
+
+      <button
+        type="submit"
+        [disabled]="isLoading"
+      >
+
+        @if (isLoading) {
+          Logging in...
+        } @else {
+          Login
+        }
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

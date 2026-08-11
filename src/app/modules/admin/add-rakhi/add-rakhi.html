@@ -1,0 +1,139 @@
+<div class="add-rakhi-container">
+
+  <div class="form-card">
+
+    <h2>Add New Rakhi</h2>
+
+    <form (ngSubmit)="addRakhi()">
+
+      <div class="form-group">
+
+        <label for="name">
+          Rakhi Name
+        </label>
+
+        <input
+          id="name"
+          type="text"
+          name="name"
+          [(ngModel)]="name"
+          placeholder="Enter Rakhi name"
+          required
+        />
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="description">
+          Description
+        </label>
+
+        <textarea
+          id="description"
+          name="description"
+          [(ngModel)]="description"
+          placeholder="Enter description"
+          rows="4"
+          required
+        ></textarea>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="price">
+          Price
+        </label>
+
+        <input
+          id="price"
+          type="number"
+          name="price"
+          [(ngModel)]="price"
+          placeholder="Enter price"
+          min="1"
+          required
+        />
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="image">
+          Rakhi Image
+        </label>
+
+        <input
+          id="image"
+          type="file"
+          accept="image/*"
+          (change)="onFileSelected($event)"
+        />
+
+      </div>
+
+
+      @if (selectedFile) {
+
+        <p class="selected-file">
+          Selected:
+          {{ selectedFile.name }}
+        </p>
+
+      }
+
+
+      @if (previewUrl) {
+
+        <div class="image-preview">
+
+          <img
+            [src]="previewUrl"
+            alt="Image preview"
+          />
+
+        </div>
+
+      }
+
+
+      @if (errorMessage) {
+
+        <div class="error-message">
+          {{ errorMessage }}
+        </div>
+
+      }
+
+
+      @if (successMessage) {
+
+        <div class="success-message">
+          {{ successMessage }}
+        </div>
+
+      }
+
+
+      <button
+        type="submit"
+        [disabled]="isLoading"
+      >
+
+        @if (isLoading) {
+          Uploading...
+        } @else {
+          Add Rakhi
+        }
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
