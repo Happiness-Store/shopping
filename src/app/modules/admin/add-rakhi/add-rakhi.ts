@@ -24,7 +24,7 @@ export class AddRakhi {
   successMessage = '';
 
   constructor(
-    private supabaseService: Supabase,
+      private supabaseService: Supabase,
     private router: Router
   ) {}
 
@@ -144,7 +144,7 @@ export class AddRakhi {
       file.name.split('.').pop();
 
     const fileName =
-      `rakhi/${Date.now()}-${crypto.randomUUID()}.${fileExtension}`;
+      `${Date.now()}-${crypto.randomUUID()}.${fileExtension}`;
 
     const filePath =
       `rakhi/${fileName}`;

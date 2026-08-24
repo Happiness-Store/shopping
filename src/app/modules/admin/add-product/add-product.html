@@ -1,0 +1,179 @@
+<div class="add-product-container">
+
+  <h2>Add Product</h2>
+
+  @if (successMessage) {
+    <div class="success-message">
+      {{ successMessage }}
+    </div>
+  }
+
+  @if (errorMessage) {
+    <div class="error-message">
+      {{ errorMessage }}
+    </div>
+  }
+
+
+  <form
+    [formGroup]="productForm"
+    (ngSubmit)="saveProduct()"
+  >
+
+    <!-- Product Name -->
+
+    <div class="form-group">
+
+      <label>
+        Product Name
+      </label>
+
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Enter product name"
+      >
+
+      @if (
+        productForm.controls.name.touched &&
+        productForm.controls.name.invalid
+      ) {
+        <small>
+          Product name is required.
+        </small>
+      }
+
+    </div>
+
+
+    <!-- Category -->
+
+    <div class="form-group">
+
+      <label>
+        Category
+      </label>
+
+      <select formControlName="category">
+
+        <option value="rakhi">
+          Rakhi
+        </option>
+
+        <option value="bottle">
+          Bottle
+        </option>
+
+        <option value="gift">
+          Gift
+        </option>
+
+        <option value="decoration">
+          Decoration
+        </option>
+
+        <option value="other">
+          Other
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <!-- Description -->
+
+    <div class="form-group">
+
+      <label>
+        Description
+      </label>
+
+      <textarea
+        formControlName="description"
+        rows="4"
+        placeholder="Enter product description"
+      ></textarea>
+
+    </div>
+
+
+    <!-- Price -->
+
+    <div class="form-group">
+
+      <label>
+        Price
+      </label>
+
+      <input
+        type="number"
+        formControlName="price"
+        min="0"
+      >
+
+    </div>
+
+
+    <!-- Stock -->
+
+    <div class="form-group">
+
+      <label>
+        Stock Quantity
+      </label>
+
+      <input
+        type="number"
+        formControlName="stock_quantity"
+        min="0"
+      >
+
+    </div>
+
+
+    <!-- Image -->
+
+    <div class="form-group">
+
+      <label>
+        Product Image
+      </label>
+
+      <input
+        type="file"
+        accept="image/jpeg,image/png,image/webp"
+        (change)="onImageSelected($event)"
+      >
+
+      @if (selectedImage) {
+
+        <p>
+          Selected:
+          {{ selectedImage.name }}
+        </p>
+
+      }
+
+    </div>
+
+
+    <!-- Submit -->
+
+    <button
+      type="submit"
+      [disabled]="isSaving"
+       class="primary-btn"
+    >
+
+      @if (isSaving) {
+        Saving...
+      } @else {
+        Add Product
+      }
+
+    </button>
+
+  </form>
+
+</div>

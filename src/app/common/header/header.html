@@ -14,23 +14,39 @@
       <a routerLink="/rakhi"
          routerLinkActive="active"
          [routerLinkActiveOptions]="{ exact: true }">
-        Rakhi
+        Rakhis
       </a>
 
-      <a routerLink="/return-gifts"
+      <!-- <a routerLink="/return-gifts"
          routerLinkActive="active">
         Return Gifts
-      </a>
+      </a> -->
 
-      <a routerLink="/decoration"
+      <a routerLink="/festive-collection"
          routerLinkActive="active">
-        Decoration
+        Festive Collection
       </a>
-     <a routerLink="/admin"
+     <!-- <a routerLink="/admin"
          routerLinkActive="active">
         Admin
-      </a>
-
+      </a> -->
+      @if(authService.isAdmin()) {
+         <a  routerLink="/admin">
+            Admin
+          </a>
+      }
+          @if(!authService.isLoggedIn()) {
+           <a  routerLink="/admin/login">
+                  Login
+                </a>
+          }
+        @if(authService.isLoggedIn()) {
+         <button (click)="logout()">
+            Logout
+          </button>
+        }
+          
+       
     </nav>
 
   </div>

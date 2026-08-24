@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router , RouterLink} from '@angular/router';
 import { Auth } from '../../../services/auth';
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
@@ -24,7 +24,7 @@ export class Dashboard {
 
     await this.router.navigate(['/admin/login']);
   }
-  addRakhi(): void {
-  this.router.navigate(['/admin/add-rakhi']);
+  addProduct(): void {
+  this.router.navigate(['/admin/add-product']);
 }
 }

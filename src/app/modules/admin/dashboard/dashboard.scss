@@ -1,0 +1,320 @@
+/* =========================================
+   ADMIN DASHBOARD
+========================================= */
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f8f7fb;
+}
+
+.admin-dashboard {
+  min-height: 100vh;
+  padding: 50px 30px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(217, 70, 131, 0.08),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(124, 63, 152, 0.07),
+      transparent 35%
+    ),
+    #f8f7fb;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.admin-dashboard-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.admin-dashboard h1 {
+  //margin: 0;
+margin: 15px 0 35px;
+  font-size: 36px;
+  font-weight: 700;
+
+  letter-spacing: -0.8px;
+
+  color: #35204f;
+}
+
+.admin-dashboard h1::after {
+  content: "";
+
+  display: block;
+
+  width: 60px;
+  height: 4px;
+
+  margin-top: 12px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #7c3f98,
+    #d94683
+  );
+}
+
+
+/* =========================================
+   WELCOME TEXT
+========================================= */
+
+.admin-dashboard > p {
+  margin: 15px 0 35px;
+
+  font-size: 16px;
+
+  color: #716779;
+}
+
+
+/* =========================================
+   ACTION AREA
+========================================= */
+
+.admin-actions {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+
+  max-width: 900px;
+}
+
+
+/* =========================================
+   ACTION CARDS / BUTTONS
+========================================= */
+
+.admin-actions a,
+.admin-actions button {
+
+  min-height: 150px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #eee8f2;
+
+  color: #392747;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 25px rgba(50, 30, 70, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* =========================================
+   ICONS
+========================================= */
+
+.admin-actions a::before,
+.admin-actions button::before {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 14px;
+
+  font-size: 25px;
+}
+
+
+/* Add Product */
+
+.admin-actions a:nth-child(1)::before {
+
+  content: "+";
+
+  color: #7c3f98;
+
+  background: #f4ecf8;
+}
+
+
+/* Manage Products */
+
+.admin-actions a:nth-child(2)::before {
+
+  content: "☷";
+
+  color: #d94683;
+
+  background: #fcecf3;
+}
+
+
+/* Logout */
+
+.admin-actions button::before {
+
+  content: "↪";
+
+  color: #c63d52;
+
+  background: #fff0f2;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.admin-actions a:hover,
+.admin-actions button:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 14px 35px rgba(50, 30, 70, 0.12);
+
+  border-color: #d9cde1;
+}
+
+
+/* =========================================
+   ADD PRODUCT HOVER
+========================================= */
+
+.admin-actions a:nth-child(1):hover {
+
+  border-color: #b895c8;
+}
+
+
+/* =========================================
+   MANAGE PRODUCTS HOVER
+========================================= */
+
+.admin-actions a:nth-child(2):hover {
+
+  border-color: #e6a5c1;
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.admin-actions button {
+
+  font-family: inherit;
+
+  outline: none;
+}
+
+.admin-actions button:hover {
+
+  border-color: #e9aab5;
+
+  color: #c63d52;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .admin-dashboard {
+
+    padding: 35px 20px;
+  }
+
+  .admin-dashboard h1 {
+
+    font-size: 30px;
+  }
+
+  .admin-actions {
+
+    grid-template-columns: 1fr;
+
+    max-width: 500px;
+  }
+
+  .admin-actions a,
+  .admin-actions button {
+
+    min-height: 120px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .admin-dashboard {
+
+    padding: 25px 15px;
+  }
+
+  .admin-dashboard h1 {
+
+    font-size: 26px;
+  }
+
+  .admin-dashboard > p {
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+  }
+
+  .admin-actions {
+
+    gap: 15px;
+  }
+}

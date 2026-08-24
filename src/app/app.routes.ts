@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AdminGuard } from './adminGuard';
 
 export const routes: Routes = [
     {
@@ -20,6 +21,12 @@ export const routes: Routes = [
         .then(m => m.Decoration)
   },
   {
+  path: 'festive-collection',
+  loadComponent: () =>
+    import('./modules/festive-collection/festive-collection')
+      .then(m => m.FestiveCollection)
+},
+  {
   path: 'admin/login',
   loadComponent: () =>
     import('./modules/admin/login/login')
@@ -27,6 +34,7 @@ export const routes: Routes = [
   },
 {
   path: 'admin',
+  canActivate: [AdminGuard],
   loadComponent: () =>
     import('./modules/admin/dashboard/dashboard')
       .then(m => m.Dashboard)
@@ -36,6 +44,12 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./modules/admin/add-rakhi/add-rakhi')
       .then(m => m.AddRakhi)
+},
+{
+  path: 'admin/add-product',
+  loadComponent: () =>
+    import('./modules/admin/add-product/add-product')
+      .then(m => m.AddProduct)
 },
   {
     path: '',

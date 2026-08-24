@@ -1,57 +1,31 @@
-import { Component ,ChangeDetectorRef } from '@angular/core';
+import { Component,ChangeDetectorRef } from '@angular/core';
 import { Product } from '../../services/product';
 import { ProductI } from '../../models/productI.model';
 @Component({
-  selector: 'app-rakhi',
+  selector: 'app-festive-collection',
   imports: [],
-  templateUrl: './rakhi.html',
-  styleUrl: './rakhi.scss',
+  templateUrl: './festive-collection.html',
+  styleUrl: './festive-collection.scss',
 })
-export class Rakhi {
-   products: ProductI[] = [];
+export class FestiveCollection {
+  products: ProductI[] = [];
 constructor(private productService: Product , private cdr: ChangeDetectorRef) {}
 ngOnInit() {
-   this.loadRakhiProducts();
+   this.loadProducts();
 }
-  loadRakhiProducts(): void {
-    this.productService.getProducts('Rakhi').subscribe({
+  loadProducts(): void {
+    this.productService.getProducts().subscribe({
       next: (data) => {
         this.products = data.products || [];
         this.cdr.detectChanges();
-        console.log('Rakhi products:', this.products);
+        console.log('Products:', this.products);
       },
       error: (error) => {
-        console.error('Error loading Rakhi products:', error);
+        console.error('Error loading products:', error);
       }
     });
   }
-  //   async loadRakhiProducts(): Promise<void> {
-
-  //   try {
-
-  //     const data =
-  //       await this.productService.getRakhiProducts();
-
-  //     console.log('Rakhi products:', data);
-
-  //     this.products = data;
-  //     this.cdr.detectChanges();
-
-  //     console.log(
-  //       'Rakhi products length:',
-  //       this.products.length
-  //     );
-
-  //   } catch (error) {
-
-  //     console.error(
-  //       'Error loading Rakhi products:',
-  //       error
-  //     );
-
-  //   }
-  // }
-  buyNow(product: ProductI): void {
+   buyNow(product: ProductI): void {
     const phoneNumber = '918483881691';
 
           const imageUrl =

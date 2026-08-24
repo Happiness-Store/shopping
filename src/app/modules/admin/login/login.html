@@ -1,66 +1,58 @@
-<div class="login-container">
+<div class="login-page">
 
   <div class="login-card">
 
-    <h2>Admin Login</h2>
+    <div class="login-logo">
+      🛍️
+    </div>
 
-    <p class="subtitle">
-      Rakhi Store Admin
-    </p>
+    <h1>Welcome Back</h1>
+
+    <p>Login to Happiness Store</p>
 
     <form (ngSubmit)="login()">
 
       <div class="form-group">
 
-        <label for="email">
-          Email
-        </label>
+        <label>Email</label>
 
         <input
-          id="email"
           type="email"
-          name="email"
           [(ngModel)]="email"
-          placeholder="Enter admin email"
-          autocomplete="email"
+          name="email"
+          placeholder="Enter your email"
+          required
         />
 
       </div>
 
       <div class="form-group">
 
-        <label for="password">
-          Password
-        </label>
+        <label>Password</label>
 
         <input
-          id="password"
           type="password"
-          name="password"
           [(ngModel)]="password"
-          placeholder="Enter password"
-          autocomplete="current-password"
+          name="password"
+          placeholder="Enter your password"
+          required
         />
 
       </div>
-
-      @if (errorMessage) {
-        <div class="error-message">
-          {{ errorMessage }}
-        </div>
-      }
+   @if(errorMessage) {
+  <div
+        class="error-message"
+      >
+        {{ errorMessage }}
+      </div>
+   }
+    
 
       <button
         type="submit"
         [disabled]="isLoading"
       >
-
-        @if (isLoading) {
-          Logging in...
-        } @else {
-          Login
-        }
-
+        {{ isLoading ? 'Logging in...' : 'Login' }}
       </button>
 
     </form>

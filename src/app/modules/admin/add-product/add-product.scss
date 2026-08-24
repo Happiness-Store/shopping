@@ -1,0 +1,392 @@
+.primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  //width: 100%;
+  padding: 14px 24px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: linear-gradient(
+    135deg,
+    #7c3f98,
+    #d94683
+  );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.primary-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.primary-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================
+   ADMIN PAGE
+================================ */
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f8f7fb;
+  color: #292536;
+}
+
+.add-product-container {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 0 20px 50px;
+}
+
+/* ================================
+   PAGE HEADER
+================================ */
+
+.add-product-container h2 {
+  margin: 0 0 25px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #35204f;
+}
+
+.add-product-container h2::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: #d94683;
+}
+
+
+/* ================================
+   FORM CARD
+================================ */
+
+form {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(50, 30, 70, 0.08);
+  border: 1px solid #eeeaf3;
+}
+
+
+/* ================================
+   FORM GROUP
+================================ */
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #493d55;
+}
+
+
+/* ================================
+   INPUTS
+================================ */
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 13px 15px;
+
+  border: 1px solid #ddd7e5;
+  border-radius: 10px;
+
+  background: #fff;
+
+  color: #332b3b;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #7c3f98;
+
+  box-shadow:
+    0 0 0 3px rgba(124, 63, 152, 0.10);
+
+  background: #fff;
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa2b3;
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+
+/* ================================
+   FILE UPLOAD
+================================ */
+
+.form-group input[type="file"] {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 14px;
+
+  border: 1.5px dashed #c9bfd3;
+  border-radius: 12px;
+
+  background: #faf8fc;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.form-group input[type="file"]:hover {
+  border-color: #7c3f98;
+  background: #f7f2fa;
+}
+
+
+/* Selected file */
+
+.form-group p {
+  margin: 8px 0 0;
+
+  font-size: 13px;
+
+  color: #6b5d74;
+}
+
+
+/* ================================
+   VALIDATION
+================================ */
+
+.form-group small {
+  display: block;
+
+  margin-top: 6px;
+
+  font-size: 12px;
+
+  color: #d9365c;
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+button[type="submit"] {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 14px 24px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: linear-gradient(
+    135deg,
+    #7c3f98,
+    #d94683
+  );
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 18px rgba(124, 63, 152, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+/* Hover */
+
+button[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 24px rgba(124, 63, 152, 0.30);
+}
+
+
+/* Click */
+
+button[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+
+/* Disabled */
+
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+/* ================================
+   SUCCESS MESSAGE
+================================ */
+
+.success-message {
+  margin-bottom: 20px;
+
+  padding: 14px 18px;
+
+  border-radius: 10px;
+
+  background: #ecfdf3;
+
+  border: 1px solid #b7ebc6;
+
+  color: #19733d;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+
+/* ================================
+   ERROR MESSAGE
+================================ */
+
+.error-message {
+  margin-bottom: 20px;
+
+  padding: 14px 18px;
+
+  border-radius: 10px;
+
+  background: #fff1f2;
+
+  border: 1px solid #fecdd3;
+
+  color: #b4233c;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+  .add-product-container {
+    margin: 25px auto;
+    padding: 0 15px 40px;
+  }
+
+  .add-product-container h2 {
+    font-size: 25px;
+  }
+
+  form {
+    padding: 24px 20px;
+    border-radius: 15px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .add-product-container {
+    margin-top: 20px;
+  }
+
+  form {
+    padding: 20px 16px;
+  }
+
+  .add-product-container h2 {
+    font-size: 23px;
+  }
+
+  button[type="submit"] {
+    padding: 13px 20px;
+  }
+}

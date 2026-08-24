@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component , ChangeDetectorRef} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Auth } from '../../../services/auth';
+import { AuthService, LoginResponse } from '../../../services/auth-service';
 @Component({
   selector: 'app-login',
   imports: [FormsModule
@@ -10,42 +10,59 @@ import { Auth } from '../../../services/auth';
   styleUrl: './login.scss',
 })
 export class Login {
-   email = '';
-  password = '';
+email = '';
+password = '';
 
-  errorMessage = '';
-  isLoading = false;
+isLoading = false;
+errorMessage = '';
 
-  constructor(
-    private authService: Auth,
-    private router: Router
-  ) {}
+constructor(
+  private authService: AuthService,
+  private router: Router,
+  private cdr: ChangeDetectorRef
+) {}
 
-  async login(): Promise<void> {
+login(): void {
 
-    this.errorMessage = '';
+  this.errorMessage = '';
+  this.isLoading = true;
 
-    if (!this.email || !this.password) {
-      this.errorMessage = 'Please enter email and password.';
-      return;
-    }
+  this.authService
+    .login(this.email, this.password)
+    .subscribe({
 
-    this.isLoading = true;
+      next: (response) => {
 
-    const result = await this.authService.login(
-      this.email,
-      this.password
-    );
+        this.isLoading = false;
 
-    this.isLoading = false;
+        if (response.success) {
 
-    if (result.error) {
-      this.errorMessage = result.error;
-      return;
-    }
+          if (response.user?.role === 'admin') {
 
-    console.log('Login successful:', result.user);
+            this.router.navigate(['/admin']);
 
-    await this.router.navigate(['/admin']);
-  }
+          } else {
+
+            this.router.navigate(['/']);
+          }
+
+        } else {
+
+          this.errorMessage =
+            response.message || 'Login failed';
+        }
+      },
+
+      error: (error) => {
+
+        this.isLoading = false;
+     console.log('Login API error:', error);
+        this.errorMessage =
+          error.error?.message ||
+          'Unable to login. Please try again.';
+          this.cdr.detectChanges();
+      }
+
+    });
+}
 }
